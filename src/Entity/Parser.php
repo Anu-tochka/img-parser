@@ -12,25 +12,20 @@ class Parser
         message: 'Введите url',
     )]
     public $url;
-/*
-	public function addition()
+	
+	// очистка урла от лишних символов
+    public function clearingURL()
     {
-        return $this->arg1 + $this->arg2;
+        if (strpos($this->url, '?')) {
+			$pos = strpos($this->url, '?');
+			$this->url = substr($this->url, 0, $pos);
+		}
+		if (preg_match('/\S.\S\\/\S/',$this->url)) {
+			$search = substr($this->url, 8);
+			$pos = strpos($search, '/');
+			$this->url = substr($this->url, 0, $pos+8);
+		}
+		return $this->url;
     }
 
-    public function subtraction()
-    {
-        return $this->arg1 - $this->arg2;
-    }
-
-    public function multiplication()
-    {
-        return $this->arg1 * $this->arg2;
-    }
-
-    public function division()
-    {
-        return $this->arg1 / $this->arg2;
-    }
-*/
 }

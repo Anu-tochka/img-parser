@@ -3,7 +3,10 @@
 {% block body %}
 <div class="container-lg">
 	<div class="d-flex flex-column gap-4">
-		{% for i in images %}{{ i }}{% endfor %}
+		<div>
+			{% for i in images %} <img src="{{ i }}">{% endfor %}
 		</div>
+	</div>
+	<div>Всего изображений: {{ sum }}</div>
 <div>
 {% endblock %}
